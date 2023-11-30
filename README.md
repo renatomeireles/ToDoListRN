@@ -2,6 +2,9 @@
 
 Aplicação mobile feita em React Native CLI com Typescript e Styled Components, utilizando MMKV como Storage.
 
+![ToDo](https://github.com/renatomeireles/ToDoListRN/assets/5069081/305a7f4c-1be5-40c7-9caa-557cee046025)
+
+![ToDo2](https://github.com/renatomeireles/ToDoListRN/assets/5069081/476a73b1-baea-4b39-8412-59d7c5ee52ae)
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
