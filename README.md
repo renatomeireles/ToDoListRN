@@ -1,6 +1,6 @@
 # To-Do List React Native
 
-Aplicação mobile feita em React Native CLI com Typescript e Styled Components, utilizando MMKV como Storage.
+Aplicação mobile desenvolvida em React Native CLI com Typescript e Styled Components, utilizando MMKV para armazenamento local.
 
 ![ToDo](https://github.com/renatomeireles/ToDoListRN/assets/5069081/305a7f4c-1be5-40c7-9caa-557cee046025)
 
