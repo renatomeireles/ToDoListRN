@@ -7,13 +7,19 @@ interface ActiveProps {
 
 export const Container = styled.View`
 padding: 20px;
+height: 100vh;
 `
 
 export const Title = styled.Text`
   font-size: 25px;
   font-weight: bold;
   color: ${defaultTheme.secondary};
-  margin-bottom: 20px;
+`
+export const BoxTitle = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 `
 
 export const Field = styled.TextInput<ActiveProps>`
@@ -22,7 +28,7 @@ export const Field = styled.TextInput<ActiveProps>`
   padding: 10px;
   font-size: 15px;
   color: ${defaultTheme.secondary};
-  background-color: #3b3b3b;
+  background-color: #374a46;
   border-radius: 3px;
   flex: 1;
 `
@@ -33,6 +39,15 @@ export const Form = styled.View`
 
 export const Button = styled.TouchableOpacity`
   background-color: ${defaultTheme.buttonColor};
+  padding: 5px;
+  width: 100px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ClearButton = styled.TouchableOpacity`
+  background-color: #FF9B40;
   padding: 5px;
   width: 100px;
   border-radius: 5px;
