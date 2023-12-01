@@ -5,32 +5,30 @@ import {
   TextInput,
   View,
 } from "react-native"
-import { MMKV } from "react-native-mmkv"
+import { storageService } from "../../storage/storageService"
 import * as S from "./styles"
 import Task from "@components/Task"
 import NoTask from "@components/NoTask"
 import { TypeTask } from "src/types/TypeTask"
 import IconPlus from "@assets/plus.svg"
 
-const storage = new MMKV()
-
 export default function ToDo() {
   const [task, setTask] = useState<string>('')
   const [tasks, setTasks] = useState<TypeTask[]>([])
-  const taskInputRef: React.RefObject<TextInput> = useRef<TextInput>(null);
+  const taskInputRef = useRef<TextInput>(null);
 
   useEffect(() => {
-    const tasks = storage.getString('tasks')
-    if (tasks) {
-      setTasks(JSON.parse(tasks))
-    }
+      const taskRecovery = storageService.getItem('tasks')
+      if(taskRecovery) {
+        setTasks(taskRecovery)
+      }
   }, [])
 
   const taskAdd = () => {
     const newTask = [...tasks, { id: `${Date.now() + Math.random()}`, done: false, task: task.trim() }]
     setTasks(newTask)
     setTask('')
-    storage.set('tasks', JSON.stringify(newTask))
+    storageService.setItem('tasks', newTask)
     taskInputRef.current?.blur()
   }
 
@@ -65,7 +63,7 @@ export default function ToDo() {
   const handleTaskDone = (id: string) => {
     const newTask = tasks.map((task) => task.id === id ? ({ ...task, done: !task.done }) : task)
     setTasks(newTask)
-    storage.set('tasks', JSON.stringify(newTask))
+    storageService.setItem('tasks', newTask)
   }
 
   const handleTaskDelete = (id: string) => {
@@ -80,7 +78,7 @@ export default function ToDo() {
           onPress: () => {
             const newTask = tasks.filter((task) => task.id !== id)
             setTasks(newTask)
-            storage.set('tasks', JSON.stringify(newTask))
+            storageService.setItem('tasks', newTask)
           },
         },
       ]
