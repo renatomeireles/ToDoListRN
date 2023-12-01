@@ -12,6 +12,6 @@ describe("ToDo", () => {
   it("should render the ToDo component correctly", () => {
    const { getByPlaceholderText } = render(<ToDo />);
 
-    expect(getByPlaceholderText("Escreva sua tarefa")).toBeTruthy();
+    expect(getByPlaceholderText("Escreva suas tarefas")).toBeTruthy();
   });
 });
